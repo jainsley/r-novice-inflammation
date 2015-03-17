@@ -54,9 +54,9 @@ As part of this, it's always important to check that our code is "plugged in", i
 
 ## Make It Fail Fast
 
-If it takes 20 minutes for the bug to surface, we can only do three experiments an hour. That doesn't must mean we'll get less data in more time: we're also more likely to be distracted by other things as we wait for our program to fail, which means the time we are spending on the problem is less focused. It's therefore critical to make it fail fast.
+If it takes 20 minutes for the bug to surface, we can only do three experiments an hour. That doesn't mean we'll get less data in more time: we're also more likely to be distracted by other things as we wait for our program to fail, which means the time we are spending on the problem is less focused. It's therefore critical to make it fail fast.
 
-As well as making the program fail fast in time, we want to make it fail fast in space, i.e., we want to localize the failure to the smallest possible region of code:
+As well as making the program fail fast in time, we want to make it fail fast in space, i.e., we want to localize the failure to the smallest possible region of code.
 
 The smaller the gap between cause and effect, the easier the connection is to find. Many programmers therefore use a divide and conquer strategy to find bugs, i.e., if the output of a function is wrong, they check whether things are OK in the middle, then concentrate on either the first or second half, and so on.
 
@@ -64,7 +64,7 @@ N things can interact in N2/2 different ways, so every line of code that isn't r
 
 ## Change One Thing at a Time, For a Reason
 
-Replacing random chunks of code is unlikely to do much good. (After all, if you got it wrong the first time, you'll probably get it wrong the second and third as well.) Good programmers therefore change one thing at a time, for a reason They are either trying to gather more information ("is the bug still there if we change the order of the loops?") or test a fix ("can we make the bug go away by sorting our data before processing it?").
+Replacing random chunks of code is unlikely to do much good. (After all, if you got it wrong the first time, you'll probably get it wrong the second and third as well.) Good programmers therefore change one thing at a time for a reason. They are either trying to gather more information ("is the bug still there if we change the order of the loops?") or test a fix ("can we make the bug go away by sorting our data before processing it?").
 
 Every time we make a change, however small, we should re-run our tests immediately, because the more things we change at once, the harder it is to know what's responsible for what (those N2 interactions again). And we should re-run all of our tests: more than half of fixes made to code introduce (or re-introduce) bugs, so re-running all of our tests tells us whether we have regressed.
 
